@@ -45,10 +45,13 @@ services:
     environment:
       - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-worldmap-panel,neocat-cal-heatmap-panel,petrslavotinek-carpetplot-panel,mtanda-heatmap-epoch-panel, natel-usgs-datasource, snuids-radar-panel, natel-plotly-panel, briangann-datatable-panel
     volumes:
-      - ./data/grafana:/var/lib/grafana     
+      - grafana:/var/lib/grafana     
     networks:
       - postgres
 
 networks:
   postgres:
     driver: bridge
+
+volumes:
+  grafana:
