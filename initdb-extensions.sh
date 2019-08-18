@@ -29,12 +29,6 @@
     psql -U $POSTGRES_USER -c 'CREATE EXTENSION IF NOT EXISTS fuzzystrmatch CASCADE;'
 )
 
-# Load fuzzystrmatch
-(
-    echo "Loading fuzzystrmatch extension"
-    psql -U $POSTGRES_USER -c 'CREATE EXTENSION IF NOT EXISTS fuzzystrmatch CASCADE;'
-)
-
 # Load pg_stat_statements
 (
     echo "Loading pg_stat_statements extension"
