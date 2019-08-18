@@ -55,7 +55,4 @@ networks:
 volumes:
   postgres:
   pgadmin:
-  geoserver-data:
-  kettle:
-  pentaho:
   grafana:
