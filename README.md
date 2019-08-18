@@ -32,3 +32,10 @@ docker-compose stop
 ```bash
 docker-compose down
 ```
+
+## Reset
+
+```bash
+docker-compose down -v \
+&& rm -rf data/
+```

@@ -11,7 +11,8 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgis}
       PGDATA: /data/postgres
     volumes:
-       - ./data/postgres:/data/postgres
+      - ./data/postgres:/data/postgres
+      - ./initdb-extensions.sh:/docker-entrypoint-initdb.d/extensions.sh
     ports:
       - "15432:5432"
     expose:

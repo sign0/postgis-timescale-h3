@@ -83,11 +83,11 @@
 # Tune PG
 (
     echo "Tuning PG configuration"
-    timescaledb-tune --quiet --yes
+    timescaledb-tune --quiet --yes --conf-path=/data/postgres/postgresql.conf
 )
 
 # Restart PG service
 (
-    echo "Restart PG service"
-    service postgresql restart
+    echo "Reload PG configuration"
+    psql -U $POSTGRES_USER -c 'SELECT pg_reload_conf();'
 )
