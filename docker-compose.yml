@@ -11,7 +11,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgis}
       PGDATA: /data/postgres
     volumes:
-       - postgres:/data/postgres
+       - ./data/postgres:/data/postgres
     ports:
       - "15432:5432"
     expose:
@@ -27,7 +27,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin@localhost}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-pgAdmin4}
     volumes:
-       - pgadmin:/root/.pgadmin
+       - ./data/pgadmin:/root/.pgadmin
     ports:
       - "${PGADMIN_PORT:-8500}:80"
     networks:
@@ -44,9 +44,9 @@ services:
     environment:
       - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-worldmap-panel,neocat-cal-heatmap-panel,petrslavotinek-carpetplot-panel,mtanda-heatmap-epoch-panel, natel-usgs-datasource, snuids-radar-panel, natel-plotly-panel, briangann-datatable-panel
     volumes:
-      - grafana:/var/lib/grafana     
+      - ./data/grafana:/var/lib/grafana     
     networks:
-      - postgres    
+      - postgres
 
 networks:
   postgres:
