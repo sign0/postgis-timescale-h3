@@ -11,7 +11,7 @@ Dockerized PostgreSQL v11 / PostGIS v2.5 / TimescaleDB v1.4 / Uber H3 (+ PGAdmin
 
 ```bash
 git clone https://github.com/sign0/postgis-timescale-h3.git \
-&& cd postgis-timescale-h3.git \
+&& cd postgis-timescale-h3 \
 && docker-compose up -d
 ```
 
