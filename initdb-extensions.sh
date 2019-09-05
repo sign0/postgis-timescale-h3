@@ -86,6 +86,13 @@
     timescaledb-tune --quiet --yes --conf-path=/data/postgres/postgresql.conf
 )
 
+# Increase max_connections to 1000
+(
+    echo "Increase max_connections to 1000"
+    sed -i 's/max_connections = 100			# (change requires restart)/max_connections = 1000			# (change requires restart)/g' /data/postgres/postgresql.conf
+    sed -i 's/work_mem = 1279kB/work_mem = 104kB/g' /data/postgres/postgresql.conf
+)
+
 # Restart PG service
 (
     echo "Reload PG configuration"
